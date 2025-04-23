@@ -77,12 +77,12 @@ export const addSchool = async (req,res) => {
           ?
       )`, [name, address, longitude, latitude])
   
-      console.log("Result: ", result[0].insertId)
+    //   console.log("Result: ", result[0].insertId)
 
       const id = result[0].insertId
 
       const [addedSchool] = await pool.query(`SELECT name, address, longitude, latitude FROM schools where id = ?`, [id])
-      console.log("addedSchool: ", addedSchool[0])
+    //   console.log("addedSchool: ", addedSchool[0])
   
       res.status(200).json({
         status: 200,
