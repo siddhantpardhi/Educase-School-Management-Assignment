@@ -14,6 +14,7 @@ export const connectDB = async() => {
             host: process.env.MYSQLHOST,
             user: process.env.MYSQLUSER,
             password: process.env.MYSQLPASSWORD,
+            port: process.env.MYSQLPORT
           }).promise();
         
          await connection.query(`CREATE DATABASE IF NOT EXISTS ${process.env.MYSQLDATABASE};`);
@@ -23,7 +24,8 @@ export const connectDB = async() => {
             host: process.env.MYSQLHOST,
             user: process.env.MYSQLUSER,
             password: process.env.MYSQLPASSWORD,
-            database: process.env.MYSQLDATABASE
+            database: process.env.MYSQLDATABASE,
+            port: process.env.MYSQLPORT
         }).promise()
         
         // console.log("Connection Pool: ", pool)
